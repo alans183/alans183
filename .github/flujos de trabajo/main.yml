@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Inicio de sesión</title>
+</head>
+<body>
+
+	<form id="regForm" action="/action_page.php">
+  <div class="simp">
+    <img src="https://cdn.pixabay.com/photo/2018/02/18/10/54/construction-area-3161945_960_720.jpg" class="avatar" alt="Avatar Image">
+    <h1>Iniciar sesión:</h1>
+    <!-- One "tab" for each step in the form: -->
+    <div class="tab">
+      <p><input placeholder="Correo" oninput="this.className = ''" name="fname" type="email"></p>
+      <p><input placeholder="Contraseña" oninput="this.className = ''" name="lname" type="password"></p>
+    </div>
+    <div style="overflow:auto;">
+      <div style="float:right;">
+  
+        <button type="button" id="nextBtn" onclick="nextPrev(1)">Ingresar</button>
+      </div>
+    </div>
+    <!-- Circles which indicates the steps of the form: -->
+    <div style="text-align:center;margin-top:40px;">
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+    </div>
+  </div>
+  </form>
+
+</body>
+</html>
