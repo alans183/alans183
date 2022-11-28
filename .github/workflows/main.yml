@@ -1,0 +1,126 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.0
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 23-08-2022 a las 00:28:18
+-- Versión del servidor: 10.4.18-MariaDB
+-- Versión de PHP: 8.0.5
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de datos: `registro`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `alumnos`
+--
+
+CREATE TABLE `alumnos` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
+  `correo` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
+  `telefono` int(15) NOT NULL,
+  `direccion` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
+  `DNI` int(15) NOT NULL,
+  `nacimiento` date NOT NULL,
+  `edad` int(10) NOT NULL,
+  `curso` text COLLATE utf8_spanish2_ci NOT NULL,
+  `Contraseña` text COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `alumnos`
+--
+
+INSERT INTO `alumnos` (`id`, `nombre`, `correo`, `telefono`, `direccion`, `DNI`, `nacimiento`, `edad`, `curso`, `Contraseña`) VALUES
+(4, 'Mauricio', 'mauriciosebas6@gmail', 1139015968, 'las flores 3436', 45612567, '2022-07-11', 18, '7°5', '3938657'),
+(5, 'Aylen', 'aylen.are@gmail.com', 1139015968, 'barrientos 6695', 45239012, '2003-11-14', 18, '7°5', '0'),
+(7, 'Octavio', 'salinaso855@gmail.co', 1170073860, 'atalco 3143', 45524865, '2004-02-01', 18, '7°5', '0'),
+(11, 'Farias Jesus', 'fariasjesus.p@gmail.', 1141494148, 'Dr Enrique Simon Per', 43510489, '2001-12-07', 21, '7Â°5', '0'),
+(12, 'Ivan', 'ivanlear062@gmail.co', 110000000, 'Maranta 1035', 45402350, '2003-09-12', 18, '7Â°5', '9910');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `evento`
+--
+
+CREATE TABLE `evento` (
+  `id` int(11) NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `start` date NOT NULL,
+  `color` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `eventoscalendar`
+--
+
+CREATE TABLE `eventoscalendar` (
+  `id` int(11) DEFAULT NULL,
+  `evento` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `color_evento` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `fecha_inicio` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `fecha_fin` varchar(20) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `eventoscalendar`
+--
+
+INSERT INTO `eventoscalendar` (`id`, `evento`, `color_evento`, `fecha_inicio`, `fecha_fin`) VALUES
+(NULL, 'Tarea', '#FF5722', '2022-07-16', '2022-07-17'),
+(NULL, 'Cumpleaños', '#9c27b0', '2022-07-15', '2022-07-16'),
+(NULL, 'Rgtretegg', '#FF5722', '2022-07-07', '2022-07-08'),
+(NULL, 'Ultimo Dis De Vacaciones', '#FF5722', '2022-07-29', '2022-07-30');
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `alumnos`
+--
+ALTER TABLE `alumnos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `evento`
+--
+ALTER TABLE `evento`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `alumnos`
+--
+ALTER TABLE `alumnos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT de la tabla `evento`
+--
+ALTER TABLE `evento`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
